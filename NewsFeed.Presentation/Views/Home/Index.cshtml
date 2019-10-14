@@ -1,0 +1,18 @@
+﻿@model NewsFeed.Presentation.Models.HeadlineViewModel
+
+@{
+    ViewData["Title"] = "News";
+}
+
+@{ 
+    foreach (var article in Model.Articles)
+    {
+    <div style="border: 1px solid black;">
+        <h4>@article.Title</h4>
+        <img src="@article.UrlToImage" width="100%"/>
+        <p>@article.Description</p>
+        <p>Read more about <a href="@article.Url">@article.Title</a>.</p>
+    </div>
+    <br />
+    }
+}
